@@ -1,0 +1,44 @@
+/* O filme ocupa a antiga posição do retrato, sem recortar o vídeo. */
+.hero-video-art{padding:0;min-width:0}
+.hero-video-art .orbit{width:520px;max-width:130%;top:50%}
+.hero-video-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:20px}
+.hero-video-heading .eyebrow{font-size:8px;letter-spacing:1.8px;gap:9px}
+.hero-video-heading .eyebrow::before{width:18px}
+.film-index{font:500 8px 'Manrope',sans-serif;letter-spacing:1.5px;color:var(--muted);white-space:nowrap}
+.hero-film{position:relative;overflow:hidden;background:var(--deep);border:1px solid #f2c57c55;border-radius:10px;box-shadow:0 35px 75px #00171366,0 0 70px #6e9c5e12;transform:perspective(1200px) rotateY(-3deg) rotateX(1deg);transition:transform .8s var(--ease),border-color .5s,box-shadow .5s;scroll-margin-top:125px}
+.hero-film:hover,.hero-film:focus-within,.hero-film.is-playing{transform:perspective(1200px) rotateY(0) rotateX(0);border-color:#f2c57c99;box-shadow:0 35px 85px #00171366,0 0 65px #bca36317}
+.film-topline{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:15px 18px;border-bottom:1px solid #ffffff12;color:#c6d3bf;font:600 8px 'Manrope',sans-serif;letter-spacing:1.8px}
+.film-topline>span:first-child{display:flex;align-items:center;gap:8px}
+.film-topline>span:last-child{color:var(--gold);font-size:7px;letter-spacing:1.2px}
+.film-stage{position:relative;aspect-ratio:16/9;background:#031c17;overflow:hidden}
+.film-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.film-cover{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;background:var(--deep);text-align:left;isolation:isolate;overflow:hidden}
+.film-cover.is-dismissed{opacity:0;visibility:hidden;pointer-events:none;transform:scale(1.025);transition:opacity .65s var(--ease),transform .9s var(--ease),visibility 0s .65s}
+.film-cover>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1);transition:transform 1.2s var(--ease)}
+.film-cover:hover>img{transform:scale(1.035)}
+.film-cover-shade{position:absolute;inset:0;background:linear-gradient(90deg,#032a2533,transparent 65%),linear-gradient(0deg,#021f1a66,transparent 50%)}
+.film-cover-label{position:absolute;top:24px;left:25px;color:#f6f3e9;font:600 8px/1.8 'Manrope',sans-serif;letter-spacing:2px}
+.film-play-icon{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);width:67px;height:67px;display:grid;place-items:center;border:1px solid #f2c57c99;border-radius:50%;background:#082c2566;backdrop-filter:blur(8px);box-shadow:0 0 0 12px #f2c57c0a;transition:box-shadow .35s,background .35s}
+.film-play-icon::after{content:'';position:absolute;inset:-10px;border:1px solid #f2c57c2e;border-radius:50%;animation:film-ring 4s ease-in-out infinite}
+.film-play-icon svg{width:24px;height:24px;fill:var(--gold);margin-left:3px}
+.film-cover:hover .film-play-icon{box-shadow:0 0 0 17px #f2c57c10;background:#082c25aa}
+.film-cover-caption{position:absolute;left:25px;bottom:22px;right:25px;display:flex;justify-content:space-between;align-items:end;gap:12px}
+.film-cover-caption>span:first-child{font:500 clamp(20px,2.1vw,29px)/1.2 'Manrope',sans-serif;letter-spacing:-.7px}
+.film-cover-caption em{font-family:'Playfair Display',serif;font-weight:500;color:var(--gold)}
+.film-watch{font-size:9px;color:var(--gold);padding:7px 8px;border:1px solid #f2c57c55;border-radius:3px;background:#042b25db;white-space:nowrap}
+.film-watch>span{margin-left:6px}
+.film-toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;min-height:63px;padding:15px 18px;border-top:1px solid #ffffff12;background:linear-gradient(110deg,#10382f55,transparent)}
+.film-status{font-size:10px;color:var(--muted);flex:1 1 150px;line-height:1.6}
+.film-control{border:1px solid #f2c57c55;border-radius:4px;background:transparent;color:var(--gold);padding:8px 10px;font-size:9px;white-space:nowrap}
+.film-control:hover{background:#f2c57c12}
+.film-pause{color:var(--muted);border-color:#ffffff26}
+.film-footnote{display:flex;justify-content:space-between;gap:15px;margin-top:19px;font-size:9px;color:var(--muted)}
+.film-footnote a{color:var(--gold);border-bottom:1px solid #f2c57c33}
+.hero-film.is-loading .film-play-icon{opacity:.55}
+.hero-film.is-loading .film-play-icon::after{animation-duration:1.2s}
+@keyframes film-ring{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.1);opacity:.2}}
+@media(max-width:1100px){.hero-video-heading .eyebrow{font-size:7px;letter-spacing:1.2px}.film-index{display:none}.film-cover-caption{left:20px;right:20px;bottom:18px}.film-cover-label{left:20px;top:19px}.film-play-icon{width:55px;height:55px}.film-watch{font-size:8px}}
+@media(min-width:601px) and (max-width:850px){.hero-grid{grid-template-columns:1.05fr 1fr;gap:25px}.film-cover-caption>span:first-child{font-size:20px}.film-watch{display:none}.film-play-icon{width:49px;height:49px}.film-cover-label{font-size:7px}.film-topline{padding:13px}.film-toolbar{padding:12px 13px}.film-topline>span:last-child{display:none}.film-status{font-size:9px}}
+@media(max-width:600px){.hero-video-art{padding:0;margin:6px 0 3px}.hero-video-heading{margin-bottom:14px}.hero-video-heading .eyebrow{font-size:8px;letter-spacing:1.3px}.hero-film{border-radius:8px;transform:none;scroll-margin-top:100px}.hero-video-art .orbit{width:400px}.film-cover-caption>span:first-child{font-size:24px}.film-cover-label{font-size:7px;top:17px;left:19px}.film-play-icon{width:54px;height:54px;top:41%}.film-cover-caption{left:19px;right:19px;bottom:17px}.film-watch{font-size:8px}.film-toolbar{padding:12px 14px;gap:8px}.film-status{font-size:9px}.film-topline{padding:13px 15px;font-size:7px}.film-topline>span:last-child{font-size:6px}.film-footnote{font-size:8px;margin-top:14px}}
+@media(max-width:360px){.film-watch{display:none}.film-cover-caption>span:first-child{font-size:21px}.film-play-icon{width:45px;height:45px}.film-cover-label{font-size:6px;letter-spacing:1.5px}}
+@media(prefers-reduced-motion:reduce){.hero-film{transform:none}.film-cover>img{transform:none}.film-play-icon::after{animation:none}}
